@@ -1,0 +1,29 @@
+@import "./colors";
+@import "./variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-width: $tablet;
+  max-width: $small;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    justify-content: center;
+    min-width: unset;
+    max-width: unset;
+  }
+}
+
+.section {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
+}

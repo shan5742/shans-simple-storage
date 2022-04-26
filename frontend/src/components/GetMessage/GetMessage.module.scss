@@ -1,0 +1,20 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+.container {
+  padding: $space-mega;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    padding: $space-normal;
+  }
+}
+
+.message {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}

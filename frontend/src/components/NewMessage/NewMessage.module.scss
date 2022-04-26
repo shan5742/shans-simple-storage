@@ -1,0 +1,19 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+.form {
+  padding: $space-mega;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $tablet) {
+    padding: $space-normal;
+  }
+}
+
+.input {
+  background-color: $dark;
+  padding: $x2;
+  border: none;
+  color: $text;
+}

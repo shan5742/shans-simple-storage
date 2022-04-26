@@ -1,0 +1,37 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+.container {
+  padding: $space-mega;
+  display: flex;
+  justify-content: center;
+  max-width: $tablet;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: $tablet) {
+    padding: $space-normal;
+  }
+}
+
+.statContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $space-large;
+  background-color: $dark;
+  height: 120px;
+  width: 120px;
+  margin: 0 $x1;
+}
+
+.value {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.label {
+  font-size: 14px;
+}

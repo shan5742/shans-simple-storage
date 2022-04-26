@@ -1,0 +1,15 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+.container {
+  padding: $space-large;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $space-normal;
+  }
+}

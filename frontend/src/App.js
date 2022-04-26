@@ -91,9 +91,7 @@ function App() {
     }
   };
 
-  // handles submit button
   const handleSubmit = async (e) => {
-    // stops page from refreshing
     e.preventDefault();
     try {
       const provider = await getProviderOrSigner(true);
@@ -102,8 +100,7 @@ function App() {
         abi,
         provider
       );
-      console.log(await simpleStorageContract.set(newMessage));
-      console.log(newMessage);
+      await simpleStorageContract.set(newMessage);
     } catch (err) {
       console.error(err);
     }
@@ -159,23 +156,26 @@ function App() {
       userBalance={userBalance}
     >
       <Main />
-      <div className={s.container}>
-        <div className={s.section}>
-          <NewMessage
-            handleSubmit={handleSubmit}
-            newMessage={newMessage}
-            setNewMessage={setNewMessage}
-          />
-        </div>
-        <div className={s.section}>
-          <GetMessage
-            currentMessage={currentMessage}
-            getCurrentMessage={getCurrentMessage}
-          />
-        </div>
-      </div>
-
-      <Stats messages={totalMessages} users={totalUsers} />
+      {walletConnected && (
+        <>
+          <div className={s.container}>
+            <div className={s.section}>
+              <NewMessage
+                handleSubmit={handleSubmit}
+                newMessage={newMessage}
+                setNewMessage={setNewMessage}
+              />
+            </div>
+            <div className={s.section}>
+              <GetMessage
+                currentMessage={currentMessage}
+                getCurrentMessage={getCurrentMessage}
+              />
+            </div>
+          </div>
+          <Stats messages={totalMessages} users={totalUsers} />
+        </>
+      )}
     </Layout>
   );
 }
